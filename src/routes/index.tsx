@@ -14,9 +14,9 @@ import g6 from "@/assets/gallery-6.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Thistlewell Fountain  — Safe Water for Kabale, Uganda" },
-      { name: "description", content: "Thistlewell Fountain  is improving access to safe, reliable and sustainable water for underserved communities in Kabale District and across Uganda." },
-      { property: "og:title", content: "Thistlewell Fountain  — Water for today, hope for tomorrow." },
+      { title: "Thistlewell Fountain Foundation — Safe Water for Kabale, Uganda" },
+      { name: "description", content: "Thistlewell Fountain Foundation is improving access to safe, reliable and sustainable water for underserved communities in Kabale District and across Uganda." },
+      { property: "og:title", content: "Thistlewell Fountain Foundation — Safe Water. Stronger Communities." },
       { property: "og:description", content: "Community-driven water projects in Kabale District, Uganda." },
       { property: "og:url", content: "/" },
     ],
@@ -107,7 +107,7 @@ function HomePage() {
             transition={{ duration: 0.5 }}
             className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/40 bg-black/30 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest backdrop-blur"
           >
-            Thistlewell Fountain  · Kabale, Uganda
+            Thistlewell Fountain Foundation · Kabale, Uganda
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -115,7 +115,7 @@ function HomePage() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="max-w-4xl text-4xl font-extrabold leading-[1.1] sm:text-5xl md:text-6xl drop-shadow-lg"
           >
-            Water for <span className="text-accent-orange">today,</span> hope for tommorrow.
+            Safe Water. <span className="text-accent-orange">Stronger Communities.</span> Brighter Futures.
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -123,7 +123,7 @@ function HomePage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-5 max-w-2xl text-base text-white sm:text-lg drop-shadow"
           >
-            Thistlewell Fountain  is committed to improving access to safe, reliable and
+            Thistlewell Fountain Foundation is committed to improving access to safe, reliable and
             sustainable water for underserved communities in Kabale District and across Uganda —
             through community-driven water projects that improve health, education, dignity and
             economic opportunity.
@@ -175,9 +175,9 @@ function HomePage() {
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest text-accent-orange">Our Mission</p>
-            <h2 className="mt-3 text-3xl font-bold sm:text-4xl">Water is the  of every healthy community.</h2>
+            <h2 className="mt-3 text-3xl font-bold sm:text-4xl">Water is the foundation of every healthy community.</h2>
             <p className="mt-4 text-muted-foreground">
-              Thistlewell Fountain  exists to improve the quality of life of underserved
+              Thistlewell Fountain Foundation exists to improve the quality of life of underserved
               communities in Kabale District and across Uganda by installing durable water storage
               tanks, training local water committees and promoting hygiene and sanitation. As a newly
               established organization, we are just beginning our journey — and we invite you to walk
@@ -188,7 +188,7 @@ function HomePage() {
                 to="/about"
                 className="inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-brand-foreground hover:bg-brand/90"
               >
-                About the 
+                About the Foundation
               </Link>
               <Link
                 to="/programs"

@@ -8,9 +8,9 @@ import g4 from "@/assets/gallery-4.jpg";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Thistlewell Fountain " },
-      { name: "description", content: "Thistlewell Fountain  is a Kabale-based NGO improving access to safe, sustainable water in underserved communities across Uganda." },
-      { property: "og:title", content: "About — Thistlewell Fountain " },
+      { title: "About — Thistlewell Fountain Foundation" },
+      { name: "description", content: "Thistlewell Fountain Foundation is a Kabale-based NGO improving access to safe, sustainable water in underserved communities across Uganda." },
+      { property: "og:title", content: "About — Thistlewell Fountain Foundation" },
       { property: "og:description", content: "Who we are, why we exist, and the values guiding our work in Kabale District." },
       { property: "og:url", content: "/about" },
     ],
@@ -35,7 +35,7 @@ function AboutPage() {
       <PageHero
         eyebrow="About Us"
         title="A new voice for safe water in Kabale."
-        description="Thistlewell Fountain  is a newly established Ugandan NGO dedicated to providing safe, clean and sustainable access to water for underserved communities in Kabale District and beyond."
+        description="Thistlewell Fountain Foundation is a newly established Ugandan NGO dedicated to providing safe, clean and sustainable access to water for underserved communities in Kabale District and beyond."
       />
 
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
@@ -49,9 +49,9 @@ function AboutPage() {
             <p className="text-xs font-semibold uppercase tracking-widest text-accent-orange">Who We Are</p>
             <h2 className="mt-2 text-2xl font-bold">Rooted in Kabale, focused on water.</h2>
             <p className="mt-4 text-muted-foreground">
-              Thistlewell Fountain  is a newly established Ugandan non-governmental
+              Thistlewell Fountain Foundation is a newly established Ugandan non-governmental
               organization based in Kabale District, in the Kigezi region of western Uganda. The
-               was formed in response to a stark reality: despite streams and springs in
+              foundation was formed in response to a stark reality: despite streams and springs in
               many parts of Kigezi, communities still face intermittent supply, long walking
               distances and unsafe water — a burden carried disproportionately by women and girls.
             </p>

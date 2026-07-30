@@ -2,7 +2,7 @@ import { Heart, MessageCircle } from "lucide-react";
 
 const WA_PHONE = "256789585338";
 const WA_MSG = encodeURIComponent(
-  "Hello Thistlewell Fountain, I would like to learn more about your water projects and how I can support your work."
+  "Hello Thistlewell Fountain Foundation, I would like to learn more about your water projects and how I can support your work."
 );
 
 export function FloatingActions() {

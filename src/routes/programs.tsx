@@ -10,7 +10,7 @@ export const Route = createFileRoute("/programs")({
   head: () => ({
     meta: [
       { title: "Our Project — Enhancing Water Security in Kabale District" },
-      { name: "description", content: "Thistlewell Fountain 's flagship project: installing 5,000-litre water storage tanks in underserved sub-counties of Kabale District, Uganda. Aligned with SDG 6." },
+      { name: "description", content: "Thistlewell Fountain Foundation's flagship project: installing 5,000-litre water storage tanks in underserved sub-counties of Kabale District, Uganda. Aligned with SDG 6." },
       { property: "og:title", content: "Enhancing Water Security in Kabale District" },
       { property: "og:description", content: "Our 6-month flagship water storage project in Kabale, Uganda." },
       { property: "og:url", content: "/programs" },
@@ -45,7 +45,7 @@ const objectives = [
 const phases = [
   { title: "Planning", text: "Establish a clear implementation framework, secure approvals and finalise designs." },
   { title: "Community Engagement", text: "Consult local leaders, women's groups and youth to co-select tank sites and confirm agreements." },
-  { title: "Construction", text: "Prepare s, install 5,000-litre tanks, connect distribution taps and quality-test the system." },
+  { title: "Construction", text: "Prepare foundations, install 5,000-litre tanks, connect distribution taps and quality-test the system." },
   { title: "Capacity Building", text: "Train community water committees and hygiene promoters; distribute toolkits and spare parts." },
   { title: "Monitoring & Evaluation", text: "Track functionality, water use and health outcomes with baseline and follow-up surveys." },
 ];

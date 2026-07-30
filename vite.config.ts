@@ -12,13 +12,4 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
-  nitro: {
-    // Netlify's own build environment sets NETLIFY=1, which makes Nitro
-    // auto-select its "netlify" preset instead of the "cloudflare-module"
-    // default this config normally uses (that default only applies inside
-    // Lovable's sandbox). The "netlify" preset's public dir template didn't
-    // resolve to the "dist/client" path Netlify's Publish directory expects,
-    // so pin it explicitly to keep both environments aligned.
-    output: { publicDir: "dist/client" },
-  },
 });

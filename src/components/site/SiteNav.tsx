@@ -1,8 +1,7 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Menu, X, Moon, Sun } from "lucide-react";
+import { Menu, X, Droplets, Moon, Sun } from "lucide-react";
 import { cn } from "@/lib/utils";
-import logo from "@/assets/logo.png";
 
 const links = [
   { to: "/", label: "Home" },
@@ -26,18 +25,13 @@ export function SiteNav() {
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => {
-    setOpen(false);
-  }, [location.pathname]);
+  useEffect(() => setOpen(false), [location.pathname]);
 
   useEffect(() => {
-    const saved =
-      typeof window !== "undefined" && localStorage.getItem("tff-theme");
-
+    const saved = typeof window !== "undefined" && localStorage.getItem("tff-theme");
     if (saved === "dark") {
       document.documentElement.classList.add("dark");
       setDark(true);
@@ -56,128 +50,90 @@ export function SiteNav() {
       className={cn(
         "fixed inset-x-0 top-0 z-40 transition-all duration-300",
         scrolled || open
-          ? "border-b border-border bg-background/90 shadow-sm backdrop-blur-md"
-          : "bg-transparent"
+          ? "bg-background/90 backdrop-blur-md shadow-sm border-b border-border"
+          : "bg-transparent",
       )}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
-        {/* Logo */}
-        <Link
-          to="/"
-          className="flex shrink-0 items-center gap-3"
-          aria-label="Thistlewell Fountain home"
-        >
-          <img
-            src={logo}
-            alt="Thistlewell Fountain Logo"
-            className="h-11 w-11 rounded-full object-cover shadow-md"
-          />
-
+        <Link to="/" className="flex items-center gap-2 shrink-0" aria-label="Thistlewell Fountain Foundation home">
+          <span className="grid h-10 w-10 place-items-center rounded-full bg-brand text-brand-foreground shadow-md">
+            <Droplets className="h-5 w-5" aria-hidden />
+          </span>
           <span className="flex flex-col leading-tight">
-            <span className="text-sm font-bold text-brand sm:text-base">
-              Thistlewell
-            </span>
-            <span className="text-[10px] font-medium uppercase tracking-widest text-muted-foreground">
-              Fountain
-            </span>
+            <span className="text-sm font-bold text-brand sm:text-base">Thistlewell</span>
+            <span className="text-[10px] font-medium uppercase tracking-widest text-muted-foreground">Fountain Foundation</span>
           </span>
         </Link>
 
-        {/* Desktop Navigation */}
         <nav aria-label="Primary" className="hidden lg:block">
-          <ul className="flex items-center gap-2">
-            {links.map((link) => (
-              <li key={link.to}>
+          <ul className="flex items-center gap-1">
+            {links.map((l) => (
+              <li key={l.to}>
                 <Link
-                  to={link.to}
-                  className="rounded-full px-4 py-2 text-sm font-medium text-foreground transition-all duration-300 hover:bg-accent-orange hover:text-white"
-                  activeProps={{
-                    className:
-                      "rounded-full bg-accent-orange px-4 py-2 text-sm font-medium text-white shadow-md",
-                  }}
-                  activeOptions={{
-                    exact: link.to === "/",
-                  }}
+                  to={l.to}
+                  className="rounded-full px-3 py-2 text-sm font-medium text-foreground/80 transition-colors hover:text-brand hover:bg-brand/5"
+                  activeProps={{ className: "text-brand bg-brand/10" }}
+                  activeOptions={{ exact: l.to === "/" }}
                 >
-                  {link.label}
+                  {l.label}
                 </Link>
               </li>
             ))}
           </ul>
         </nav>
 
-        {/* Right Controls */}
         <div className="flex items-center gap-2">
-          {/* Theme Toggle */}
           <button
             type="button"
             onClick={toggleTheme}
             aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
-            className="grid h-10 w-10 place-items-center rounded-full text-foreground/70 transition-colors hover:bg-brand/10 hover:text-brand"
+            className="grid h-10 w-10 place-items-center rounded-full text-foreground/70 hover:bg-brand/10 hover:text-brand transition-colors"
           >
-            {dark ? (
-              <Sun className="h-5 w-5" />
-            ) : (
-              <Moon className="h-5 w-5" />
-            )}
+            {dark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
           </button>
-
-          {/* Donate Button */}
           <Link
             to="/donate"
-            className="hidden items-center rounded-full bg-accent-orange px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-lg sm:inline-flex"
+            className="hidden sm:inline-flex items-center rounded-full bg-accent-orange px-5 py-2.5 text-sm font-semibold text-accent-orange-foreground shadow-sm transition-transform hover:scale-105 hover:shadow-md"
           >
             Donate
           </Link>
-
-          {/* Mobile Menu Button */}
           <button
             type="button"
-            className="grid h-11 w-11 place-items-center rounded-full text-foreground transition-colors hover:bg-brand/10 lg:hidden"
+            className="lg:hidden grid h-11 w-11 place-items-center rounded-full text-foreground hover:bg-brand/10"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
           >
-            {open ? (
-              <X className="h-6 w-6" />
-            ) : (
-              <Menu className="h-6 w-6" />
-            )}
+            {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile menu */}
       <div
         className={cn(
-          "overflow-hidden border-t border-border bg-background/95 backdrop-blur transition-[max-height,opacity] duration-300 lg:hidden",
-          open ? "max-h-[80vh] opacity-100" : "max-h-0 opacity-0"
+          "lg:hidden overflow-hidden border-t border-border transition-[max-height,opacity] duration-300 bg-background/95 backdrop-blur",
+          open ? "max-h-[80vh] opacity-100" : "max-h-0 opacity-0",
         )}
       >
         <nav aria-label="Mobile" className="px-4 py-4 sm:px-6">
-          <ul className="flex flex-col gap-2">
-            {links.map((link) => (
-              <li key={link.to}>
+          <ul className="flex flex-col gap-1">
+            {links.map((l) => (
+              <li key={l.to}>
                 <Link
-                  to={link.to}
-                  className="block rounded-lg px-4 py-3 text-base font-medium text-foreground transition-all duration-300 hover:bg-accent-orange hover:text-white"
-                  activeProps={{
-                    className:
-                      "block rounded-lg bg-accent-orange px-4 py-3 text-base font-medium text-white",
-                  }}
-                  activeOptions={{
-                    exact: link.to === "/",
-                  }}
+                  to={l.to}
+                  className="block rounded-lg px-4 py-3 text-base font-medium text-foreground hover:bg-brand/10 hover:text-brand"
+                  activeProps={{ className: "text-brand bg-brand/10" }}
+                  activeOptions={{ exact: l.to === "/" }}
                 >
-                  {link.label}
+                  {l.label}
                 </Link>
               </li>
             ))}
-
             <li className="pt-2">
               <Link
                 to="/donate"
-                className="block rounded-full bg-accent-orange px-5 py-3 text-center text-sm font-semibold text-white shadow-md transition-all duration-300 hover:scale-[1.02]"
+                className="block rounded-full bg-accent-orange px-5 py-3 text-center text-sm font-semibold text-accent-orange-foreground shadow-sm"
               >
                 Donate Now
               </Link>
