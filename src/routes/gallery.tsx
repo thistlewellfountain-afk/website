@@ -13,9 +13,9 @@ import g6 from "@/assets/gallery-6.jpg";
 export const Route = createFileRoute("/gallery")({
   head: () => ({
     meta: [
-      { title: "Gallery — Thistlewell Fountain Foundation" },
+      { title: "Gallery — Thistlewell Fountain" },
       { name: "description", content: "A visual journey through the world we serve: clean water, wells, communities, children, nature and conservation." },
-      { property: "og:title", content: "Gallery — Thistlewell Fountain Foundation" },
+      { property: "og:title", content: "Gallery — Thistlewell Fountain" },
       { property: "og:description", content: "Images of water, communities and hope." },
       { property: "og:url", content: "/gallery" },
     ],

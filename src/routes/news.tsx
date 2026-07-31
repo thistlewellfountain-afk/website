@@ -5,9 +5,9 @@ import { PageHero } from "@/components/site/PageHero";
 export const Route = createFileRoute("/news")({
   head: () => ({
     meta: [
-      { title: "News & Updates — Thistlewell Fountain Foundation" },
-      { name: "description", content: "Follow the beginning of the Thistlewell Fountain Foundation journey. Announcements, project updates and stories from the field, coming soon." },
-      { property: "og:title", content: "News & Updates — Thistlewell Fountain Foundation" },
+      { title: "News & Updates — Thistlewell Fountain" },
+      { name: "description", content: "Follow the beginning of the Thistlewell Fountain journey. Announcements, project updates and stories from the field, coming soon." },
+      { property: "og:title", content: "News & Updates — Thistlewell Fountain" },
       { property: "og:description", content: "Updates and stories from our journey." },
       { property: "og:url", content: "/news" },
     ],
@@ -17,7 +17,7 @@ export const Route = createFileRoute("/news")({
 });
 
 const placeholders = [
-  { tag: "Announcement", title: "Our journey begins in Kabale.", excerpt: "Thistlewell Fountain Foundation is officially launching in Kabale District — this is our first chapter." },
+  { tag: "Announcement", title: "Our journey begins in Kabale.", excerpt: "Thistlewell Fountain is officially launching in Kabale District — this is our first chapter." },
   { tag: "Project", title: "First tank sites: being identified.", excerpt: "We are working with local leaders in Butanda, Rubaya and Kyanamira to select the first water storage tank locations." },
   { tag: "Story", title: "Voices from the ground.", excerpt: "Stories of the families and communities we are preparing to serve across Kabale District." },
 ];

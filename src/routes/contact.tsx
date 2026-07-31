@@ -10,9 +10,9 @@ import { PageHero } from "@/components/site/PageHero";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Thistlewell Fountain Foundation" },
-      { name: "description", content: "Get in touch with Thistlewell Fountain Foundation — for donations, partnerships, volunteering or general questions." },
-      { property: "og:title", content: "Contact — Thistlewell Fountain Foundation" },
+      { title: "Contact — Thistlewell Fountain" },
+      { name: "description", content: "Get in touch with Thistlewell Fountain — for donations, partnerships, volunteering or general questions." },
+      { property: "og:title", content: "Contact — Thistlewell Fountain" },
       { property: "og:description", content: "Reach out to us for donations, partnerships and volunteering." },
       { property: "og:url", content: "/contact" },
     ],

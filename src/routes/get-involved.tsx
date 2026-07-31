@@ -5,9 +5,9 @@ import { PageHero } from "@/components/site/PageHero";
 export const Route = createFileRoute("/get-involved")({
   head: () => ({
     meta: [
-      { title: "Get Involved — Thistlewell Fountain Foundation" },
-      { name: "description", content: "Donate, volunteer, partner, sponsor a water project or become an ambassador for Thistlewell Fountain Foundation." },
-      { property: "og:title", content: "Get Involved — Thistlewell Fountain Foundation" },
+      { title: "Get Involved — Thistlewell Fountain" },
+      { name: "description", content: "Donate, volunteer, partner, sponsor a water project or become an ambassador for Thistlewell Fountain." },
+      { property: "og:title", content: "Get Involved — Thistlewell Fountain" },
       { property: "og:description", content: "Ways to support our mission of safe water for underserved communities." },
       { property: "og:url", content: "/get-involved" },
     ],
